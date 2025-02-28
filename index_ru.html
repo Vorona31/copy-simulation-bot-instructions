@@ -8,11 +8,13 @@
 
     html, body {
         margin: 0;
-        padding: 20px;
+        padding: 0;
         font-family: Arial, sans-serif !important;
         background-color: #ffffff !important;
-        text-align: center !important;
-        overflow: auto !important; /* Позволяет прокрутку всего контента */
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        min-height: 100vh !important; /* Полная высота экрана */
     }
     .container {
         width: 60% !important;
@@ -22,9 +24,7 @@
         padding: 20px !important;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
         border-radius: 10px !important;
-        margin: auto !important;
-        overflow: visible !important; /* Разрешает видеть весь текст */
-        word-wrap: break-word !important;
+        margin: auto !important; /* Центрирование */
     }
     h1, h2, p {
         text-align: center !important;
