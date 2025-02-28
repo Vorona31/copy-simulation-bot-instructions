@@ -10,27 +10,33 @@
         height: 100%;
         margin: 0;
         padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: Arial, sans-serif;
-        background-color: #ffffff;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        font-family: Arial, sans-serif !important;
+        background-color: #ffffff !important;
+        text-align: center !important;
+        overflow: visible !important; /* Разрешаем отображение скрытых частей */
     }
     .container {
-        width: 60%;
-        max-width: 800px;
-        text-align: center;
-        background: white;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
+        width: 60% !important;
+        max-width: 800px !important;
+        text-align: center !important;
+        background: white !important;
+        padding: 20px !important;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+        border-radius: 10px !important;
+        margin: auto !important;
+        overflow: visible !important; /* Убираем скрытие текста */
+        word-wrap: break-word !important; /* Перенос длинных слов */
     }
     h1, h2, p {
-        text-align: center;
+        text-align: center !important;
     }
     ul, ol {
-        display: inline-block;
-        text-align: left;
+        display: inline-block !important;
+        text-align: left !important;
     }
 
 
