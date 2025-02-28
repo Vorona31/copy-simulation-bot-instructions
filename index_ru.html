@@ -7,17 +7,12 @@
   <style>
 
     html, body {
-        height: 100%;
         margin: 0;
-        padding: 0;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
+        padding: 20px;
         font-family: Arial, sans-serif !important;
         background-color: #ffffff !important;
         text-align: center !important;
-        overflow: visible !important; /* Разрешаем отображение скрытых частей */
+        overflow: auto !important; /* Позволяет прокрутку всего контента */
     }
     .container {
         width: 60% !important;
@@ -28,8 +23,8 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
         border-radius: 10px !important;
         margin: auto !important;
-        overflow: visible !important; /* Убираем скрытие текста */
-        word-wrap: break-word !important; /* Перенос длинных слов */
+        overflow: visible !important; /* Разрешает видеть весь текст */
+        word-wrap: break-word !important;
     }
     h1, h2, p {
         text-align: center !important;
