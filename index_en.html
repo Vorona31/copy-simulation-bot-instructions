@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Guide for the Copy Simulation Bot</title>
   <style>
-
     html, body {
         margin: 0;
         padding: 0;
@@ -14,7 +13,7 @@
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-        min-height: 100vh !important; /* Полная высота экрана */
+        min-height: 100vh !important;
     }
     .container {
         width: 60% !important;
@@ -24,7 +23,7 @@
         padding: 20px !important;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
         border-radius: 10px !important;
-        margin: auto !important; /* Центрирование */
+        margin: auto !important;
     }
     h1, h2, p {
         text-align: center !important;
@@ -33,22 +32,6 @@
         display: inline-block !important;
         text-align: left !important;
     }
-
-
-    body {
-        text-align: center;
-        font-family: Arial, sans-serif;
-        max-width: 800px;
-        margin: auto;
-    }
-    h1 {
-        margin-top: 20px;
-    }
-    ul {
-        display: inline-block;
-        text-align: left;
-    }
-
     body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
     h1 { color: #333; }
     h2 { color: #555; }
@@ -63,8 +46,8 @@
   <p>This guide explains how to use the copy simulation bot via Telegram. The bot allows you to:</p>
   <ul>
     <li>Load wallet activities.</li>
-    <li>Configure parameters such as the bot’s fee, tip, and purchase amount.</li>
-    <li>Simulate operations by fully repeating the wallet’s actions.</li>
+    <li>Configure parameters such as the bot’s fee, tip, commission, and purchase amount.</li>
+    <li>Simulate operations either by fully repeating the wallet’s actions or by applying your custom strategy.</li>
     <li>Receive a final simulation report with detailed information for each token.</li>
   </ul>
   
@@ -77,9 +60,10 @@
   <p>After selecting your language, the bot will send a welcome message and display the main menu.</p>
   
   <h2>2. Main Menu</h2>
-  <p>The main menu provides the following buttons:</p>
+  <p>The main menu provides the following buttons (each on a separate row):</p>
   <ul>
     <li><strong>⚙️ Settings</strong> – to configure fees, purchase amount, tip, etc.</li>
+    <li><strong>🧩 Strategy</strong> – to select and customize the simulation strategy.</li>
     <li><strong>📊 Copy Wallet Simulation</strong> – to load wallet activities and start the simulation.</li>
   </ul>
   
@@ -93,7 +77,20 @@
   </ul>
   <p>After updating, the bot will display your current settings.</p>
   
-  <h2>4. Loading Wallet Activities</h2>
+  <h2>4. Strategy Selection</h2>
+  <p>Tapping the <strong>🧩 Strategy</strong> button from the main menu allows you to choose the simulation mode:</p>
+  <ul>
+    <li><strong>🔄 Full replication of deals</strong> – the bot will simulate the wallet’s operations exactly as they occurred.</li>
+    <li><strong>🛠 Custom strategy</strong> – you can create, edit, and delete individual orders (such as Take Profit or Stop Loss orders). In custom strategy mode:
+      <ul>
+        <li>Tapping <strong>Create order</strong> lets you choose an order type and enter its parameters.</li>
+        <li>Your orders are listed in the “Your strategy:” message with buttons for editing or deleting each order.</li>
+        <li>A <strong>Back</strong> button returns you to the strategy selection menu.</li>
+      </ul>
+    </li>
+  </ul>
+  
+  <h2>5. Loading Wallet Activities</h2>
   <ol>
     <li>Tap <strong>Copy Wallet Simulation</strong>.</li>
     <li>Enter the wallet address.</li>
@@ -102,17 +99,17 @@
     <li>Once loaded, you will see a message like: <em>✅ Received 25 activities for the selected period.</em></li>
   </ol>
   
-  <h2>5. Simulating Operations</h2>
+  <h2>6. Simulating Operations</h2>
   <p>When you tap the <strong>Start Simulation</strong> button, the bot will:</p>
   <ul>
     <li>Display a message indicating that the simulation has started.</li>
-    <li>Fully repeat the wallet’s operations (both buys and sells) in the same order and proportions as the original.</li>
+    <li>Repeat the wallet’s operations (both buys and sells) in the same order and proportions as the original, or apply your custom strategy if selected.</li>
     <li>Calculate the purchase or sale price for each operation using historical data.</li>
     <li>The simulation takes into account your configured settings (purchase amount, fees, tip, and commission).</li>
     <li>Results are calculated for each token, including ROI, PnL, and the number of buy and sell operations.</li>
   </ul>
   
-  <h2>6. Receiving the Report</h2>
+  <h2>7. Receiving the Report</h2>
   <p>After the simulation, the bot sends a final message with buttons:</p>
   <ul>
     <li><strong>📄 Get Detailed Report</strong> – tapping this button will send you a text file with the full simulation report, including:</li>
@@ -122,15 +119,6 @@
     </ul>
     <li><strong>🏠 Main Menu</strong> – to return to the main menu.</li>
   </ul>
-  <p>Example final report:</p>
-  <pre>
-WalletId: 6rx3LXXTBjfrEvcXPLQPXqLTML5DwH6BU3Gv82Do6GhL
-------------------------------------------------------------------------
-TokenId: 9QUYvUGiqCALxrMCyJrVYXtJSpt4BYzPRv5ZRjsdqzkh ROIw: -4.83 PnLw: -0.50 SOL, Buys: 1, Sells: 2
-TokenId: bnycDW9avjX8cwnvvkfjJntkv5GTfp7ETjRg6G7pump ROIw: -4.83 PnLw: -0.50 SOL, Buys: 1, Sells: 2
-TokenId: J4NV8RNU1PBy8MNKj6KHkjQMvRCSJQCjgzrJ1XT3wXT7 ROIw: -4.83 PnLw: -0.50 SOL, Buys: 1, Sells: 2
-TokenId: 2Xq6KJS2VK6JCv5ELG24nA6sSAnAVfDauddfgGC2yh9o ROIw: -4.83 PnLw: -0.50 SOL, Buys: 1, Sells: 2
-  </pre>
 </div>
 </body>
 </html>
